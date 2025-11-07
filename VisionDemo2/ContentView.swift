@@ -1,24 +1,18 @@
-//
-//  ContentView.swift
-//  VisionDemo2
-//
-//  Created by Avyan Mehra on 7/11/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView{
+            Tab("Image", systemImage: "photo"){
+                NavigationStack{
+                    RemoveBackgroundView()
+                }
+            }
+            Tab("Text", systemImage: "text.viewfinder") {
+                NavigationStack{
+                    TextTranslateView()
+                }
+            }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
